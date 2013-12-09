@@ -93,6 +93,7 @@
 					dat += "<A href='?src=\ref[src];action=create;item=ez'>E-Z-Nutrient</A> <FONT COLOR=blue>(10)</FONT> | <A href='?src=\ref[src];action=create;item=ez5'>x5</A><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=l4z'>Left 4 Zed</A> <FONT COLOR=blue>(20)</FONT> | <A href='?src=\ref[src];action=create;item=l4z5'>x5</A><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=rh'>Robust Harvest</A> <FONT COLOR=blue>(25)</FONT> | <A href='?src=\ref[src];action=create;item=rh5'>x5</A><BR>"
+					dat += "<A href='?src=\ref[src];action=create;item=pest'>Pest Spray</A> <FONT COLOR=blue>(15)</FONT> | <A href='?src=\ref[src];action=create;item=pest5'>x5</A><BR>"
 					dat += "Leather<BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=wallet'>Wallet</A> <FONT COLOR=blue>(100)</FONT><BR>"
 					dat += "<A href='?src=\ref[src];action=create;item=gloves'>Botanical gloves</A> <FONT COLOR=blue>(250)</FONT><BR>"
@@ -175,6 +176,9 @@
 		if("rh")
 			if (check_cost(25)) return 0
 			else new/obj/item/nutrient/rh(src.loc)
+		if("pest")
+			if (check_cost(15)) return 0
+			else new/obj/item/weapon/pestspray(src.loc)
 		if("ez5") //It's not an elegant method, but it's safe and easy. -Cheridan
 			if (check_cost(50)) return 0
 			else
@@ -199,6 +203,14 @@
 				new/obj/item/nutrient/rh(src.loc)
 				new/obj/item/nutrient/rh(src.loc)
 				new/obj/item/nutrient/rh(src.loc)
+		if("pest5")
+			if (check_cost(75)) return 0
+			else
+				new/obj/item/weapon/pestspray(src.loc)
+				new/obj/item/weapon/pestspray(src.loc)
+				new/obj/item/weapon/pestspray(src.loc)
+				new/obj/item/weapon/pestspray(src.loc)
+				new/obj/item/weapon/pestspray(src.loc)
 		if("wallet")
 			if (check_cost(100)) return 0
 			else new/obj/item/weapon/storage/wallet(src.loc)
