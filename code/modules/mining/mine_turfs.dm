@@ -67,9 +67,9 @@
 	var/mineralChance = 10  //means 10% chance of this plot changing to a mineral deposit
 
 /turf/simulated/mineral/random/New()
+	..()
 	if (prob(mineralChance))
 		var/mName = pickweight(mineralSpawnChanceList) //temp mineral name
-
 		if (mName)
 			var/turf/simulated/mineral/M
 			switch(mName)
@@ -91,7 +91,7 @@
 				/*if("Adamantine")
 					M = new/turf/simulated/mineral/adamantine(src)*/
 			if(M)
-				..()
+
 				src = M
 				M.levelupdate()
 	return
